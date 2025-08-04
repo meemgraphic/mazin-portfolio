@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hafiz Mazin</title>
-  <!-- 🔴 Red dot favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22><circle cx=%228%22 cy=%228%22 r=%228%22 fill=%22red%22 /></svg>">
   <style>
     body {
@@ -16,8 +15,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      cursor: none; /* hide default cursor */
+      min-height: 100vh;
+      cursor: none;
     }
 
     .container {
@@ -58,6 +57,7 @@
 
     .links {
       margin-top: 20px;
+      flex-wrap: wrap;
     }
 
     .links a {
@@ -71,7 +71,6 @@
       text-decoration: underline;
     }
 
-    /* 🔴 Red dot cursor */
     #custom-cursor {
       position: fixed;
       width: 15px;
@@ -82,6 +81,52 @@
       z-index: 9999;
       transform: translate(-50%, -50%);
     }
+
+    /* ✅ Mobile styles */
+    @media (max-width: 600px) {
+      body {
+        flex-direction: column;
+        padding: 20px;
+        cursor: default;
+      }
+
+      .header {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .avatar {
+        width: 45px;
+        height: 45px;
+      }
+
+      .name-text h1 {
+        font-size: 1.1rem;
+      }
+
+      .name-text p {
+        font-size: 0.85rem;
+      }
+
+      p, li {
+        font-size: 0.95rem;
+      }
+
+      .links {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .links a {
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+
+      #custom-cursor {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -90,7 +135,7 @@
       <img src="https://i.postimg.cc/rpmGwbNS/IMG-20230929-165443-740.jpg" alt="Profile" class="avatar" />
       <div class="name-text">
         <h1>Hafiz Mazin</h1>
-        <p>Designer based in Ramanattukara, Calicut</p>
+        <p>Designer based in Calicut, Kerala</p>
       </div>
     </div>
 
@@ -109,14 +154,13 @@
     <p>I enjoy creative problem solving, and my goal is always to deliver clean, effective, and impactful visuals.</p>
 
     <div class="links">
-      <a href="mailto:mazinshaan@gmail.com">EMAIL</a> /
-      <a href="https://instagram.com/_m._.azy_" target="_blank">INSTAGRAM</a> /
-      <a href="https://meemgraphics.in" target="_blank">WEBSITE</a> /
+      <a href="mailto:mazinshaan@gmail.com">EMAIL</a>•
+      <a href="https://instagram.com/_m._.azy_" target="_blank">INSTAGRAM</a>•
+      <a href="https://meemgraphics.in" target="_blank">WEBSITE</a>•
       <a href="https://wa.me/919745083756" target="_blank">WHATSAPP</a> 
     </div>
   </div>
 
-  <!-- 🔴 Red dot cursor tracking -->
   <div id="custom-cursor"></div>
   <script>
     const cursor = document.getElementById('custom-cursor');
